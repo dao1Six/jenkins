@@ -3,7 +3,7 @@ import os
 import xlrd,xlwt,xlutils
 from xlutils.copy import copy
 
-class ExcelControl:
+class ExcelControl():
     """"""
 
     #
@@ -56,7 +56,7 @@ class ExcelControl:
             alldata = readXlsxSheet.row_values (r)  # 循环输出excel表中每一行，即所有数据
             clokeyValue = alldata[keycol_number]  # 取出表中某列数据
             cloValue = alldata[col_number]  # 取出表中某列数据
-            dic.update({ke})
+            dic[clokeyValue] = cloValue
         return dic
 
 
@@ -66,9 +66,13 @@ if __name__ == '__main__':
     filepath = "./banche.xlsx"
     sheet_name = "banche"
     e = ExcelControl()
-    result = e.get_sheet_col_info(filepath,sheet_name,0)
-    print(result)
-    e.write_info_into_row(filepath,datalist=result,clo_number=5)
+    # result = e.get_sheet_col_info(filepath,sheet_name,0)
+    # print(result)
+    # e.write_info_into_row(filepath,datalist=result,clo_number=5)
+    dic = e.excle_generate_dict(filepath,sheet_name,0,1)
+    print(type(dic))
+    for i in dic.items():
+        print(i)
 
 
 
