@@ -1,14 +1,19 @@
+# 获取最新包的版本填写到班车表
+
 from controlJenkins import ContrlJenlins
 from excelcontrol import ExcelControl
 
 prodjenkins = {'url':'http://jenkins.qiqiao-prod.do1.work','username':'qiqiao','password':'6LypDvN2'}
 param_dict = {}
-a = ContrlJenlins(url=prodjenkins['url'],username=prodjenkins['username'],password=prodjenkins['password'],param_dict =param_dict)
-e = ExcelControl()
 
 filepath = "./banche.xlsx"
 sheet_name = "banche"
 
+
+
+
+a = ContrlJenlins(url=prodjenkins['url'],username=prodjenkins['username'],password=prodjenkins['password'],param_dict =param_dict)
+e = ExcelControl()
 
 jenkinsJobNames = []
 #获取班车jobname数据
