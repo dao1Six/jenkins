@@ -24,5 +24,5 @@ qiandaundic = ec.excle_generate_dict(filepath,sheet_name,2,3)
 dictMerged = dict(houdaundic, **qiandaundic)
 
 #构建服务
-for i in dictMerged.items():
-    jc.server.build_job (i, parameters={'DeployVersion':i})
+for key,value in dictMerged.items():
+    jc.server.build_job (key, parameters={'DeployVersion':value})
