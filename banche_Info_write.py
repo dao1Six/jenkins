@@ -1,4 +1,5 @@
 # 获取最新包的版本填写到班车表
+import time
 
 from controlJenkins import ContrlJenlins
 from excelcontrol import ExcelControl
@@ -14,6 +15,17 @@ sheet_name = "banche"
 
 a = ContrlJenlins(url=prodjenkins['url'],username=prodjenkins['username'],password=prodjenkins['password'],param_dict =param_dict)
 e = ExcelControl()
+
+#更新版本库
+param_list = ['fdn-schema', 'bpms-repository', 'fdn-storage', 'bpms-appstore', 'bpms-workbench', 'fdn-authorize',
+              'bpms-portal', 'bpms-operation', 'bpms-runtime', 'fdn-message', 'console-web', 'runtime-web',
+              'runtime-mobile', 'operation-web']
+for i in param_list:
+    time.sleep (5)
+    a.server.build_job ('other/SyncPublishVersion', parameters={'ModuleName': i, 'BuildTime': 'TODAY'})
+    print (i)
+
+
 
 jenkinsJobNames = []
 #获取班车jobname数据
