@@ -26,7 +26,8 @@ class ContrlJenlins:
         return a
 
 
-
+# origin/release-1.2.0
+# origin/fixbug-1.1.6
 
 if __name__ == '__main__':
     jobList = ["七巧-后端/bpms-repository","七巧-后端/fdn-message","七巧-后端/fdn-authorize","七巧-后端/fdn-storage","七巧-后端/fdn-schema","七巧-前端/console","七巧-前端/official-web","七巧-前端/official-mobile","七巧-前端/m-runtime","七巧-后端/bpms-workbench", "七巧-前端/runtime","七巧-前端/operation","七巧-前端/help","七巧-后端/bpms-runtime","七巧-后端/bpms-operation","七巧-后端/bpms-portal","七巧-后端/bpms-appstore"]
