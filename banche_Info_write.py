@@ -22,11 +22,11 @@ param_list = ['fdn-schema', 'bpms-repository', 'fdn-storage', 'bpms-appstore', '
               'runtime-mobile', 'operation-web']
 for i in param_list:
     a.server.build_job ('other/SyncPublishVersion', parameters={'ModuleName': i, 'BuildTime': 'TODAY'})
-    time.sleep (5)
+    time.sleep (2)
     print (i)
 
 
-time.sleep(10)
+# time.sleep(10)
 jenkinsJobNames = []
 #获取班车jobname数据
 #后端job数据
