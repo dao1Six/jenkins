@@ -26,17 +26,17 @@ class ContrlJenlins:
         return a
 
 
-# origin/fixbug-1.2.0
-# origin/release-1.2.1
+# origin/fixbug-1.2.1
+# origin/release-1.3.0
 #,"七巧-前端/console","七巧-前端/official-web","七巧-前端/official-mobile","七巧-前端/m-runtime","七巧-前端/runtime","七巧-前端/operation","七巧-前端/help"
 
 #"七巧-前端/official-web","七巧-前端/official-mobile",
 
 if __name__ == '__main__':
-    jobList = ["七巧-后端/bpms-repository","七巧-后端/fdn-message","七巧-后端/fdn-authorize","七巧-后端/fdn-storage","七巧-后端/fdn-schema","七巧-后端/bpms-workbench", "七巧-后端/bpms-runtime","七巧-后端/bpms-operation","七巧-后端/bpms-portal","七巧-后端/bpms-appstore","七巧-前端/console","七巧-前端/m-runtime","七巧-前端/runtime","七巧-前端/operation","七巧-前端/help"]
+    jobList = ["七巧-后端/日志服务","七巧-后端/集成中心","七巧-后端/bpms-repository","七巧-后端/fdn-message","七巧-后端/fdn-authorize","七巧-后端/fdn-storage","七巧-后端/fdn-schema","七巧-后端/bpms-workbench", "七巧-后端/bpms-runtime","七巧-后端/bpms-operation","七巧-后端/bpms-portal","七巧-后端/bpms-appstore","七巧-前端/console","七巧-前端/m-runtime","七巧-前端/runtime","七巧-前端/operation","七巧-前端/help"]
     qajenkins = {'url':'http://jenkins.qa.do1.work','username':'qiqiao','password':'1llR0lbA'}
     uatjenkins = {'url':'http://jenkins.uat.do1.work','username':'do1','password':'7HWoxn8Q'}
-    param_dict = {'Branch':'origin/release-1.2.1','PublishVersion':'true'}
+    param_dict = {'Branch':'origin/release-1.3.0','PublishVersion':'false'}
     execute_environment = qajenkins
     a = ContrlJenlins(url=execute_environment['url'],username=execute_environment['username'],password=execute_environment['password'],param_dict =param_dict)
     a.build_jenkinsJob(jobList)
