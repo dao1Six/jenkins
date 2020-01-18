@@ -13,7 +13,7 @@ sheet_name = "banche"
 
 
 
-a = ContrlJenlins(url=prodjenkins['url'],username=prodjenkins['username'],password=prodjenkins['password'],param_dict =param_dict)
+a = ContrlJenlins(url=prodjenkins['url'],username=prodjenkins['username'],password=prodjenkins['password'])
 e = ExcelControl()
 
 #更新版本库
@@ -29,6 +29,7 @@ for i in param_list:
 # time.sleep(10)
 jenkinsJobNames = []
 #获取班车jobname数据
+
 #后端job数据
 backend = e.get_sheet_col_info(xlsxName=filepath,sheet_name=sheet_name,col_number=0)
 banbenValueList = []
@@ -50,7 +51,6 @@ for i in frontend:
         frontendValueList.append(frontendValue)
     #写入excel
 e.write_info_into_row(filename=filepath,datalist=frontendValueList,clo_number=3)
-
 
 
 
