@@ -5,7 +5,7 @@ import jenkins
 #调个excel控制器
 ec = ExcelControl()
 # excel信息
-filepath = "./huidubanche.xlsx"
+filepath = "../huidubanche.xlsx"
 sheet_name = "banche"
 #生成后端要构建的服务及参数
 houdaundic = ec.excle_generate_dict(filepath,sheet_name,0,1)

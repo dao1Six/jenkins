@@ -7,7 +7,7 @@ from excelcontrol import ExcelControl
 prodjenkins = {'url':'http://jenkins.qiqiao-prod.do1.work','username':'qiqiao','password':'6LypDvN2'}
 param_dict = {}
 
-filepath = "./banche.xlsx"
+filepath = "../banche.xlsx"
 sheet_name = "banche"
 
 
