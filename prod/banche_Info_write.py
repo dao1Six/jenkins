@@ -17,7 +17,7 @@ a = ContrlJenlins(url=prodjenkins['url'],username=prodjenkins['username'],passwo
 e = ExcelControl()
 
 #更新版本库
-param_list = ['fdn-schema', 'bpms-repository', 'fdn-storage', 'bpms-appstore', 'bpms-workbench', 'fdn-authorize',
+param_list = ['official-mobile','official-web','fdn-schema', 'bpms-repository', 'fdn-storage', 'bpms-appstore', 'bpms-workbench', 'fdn-authorize',
               'bpms-portal', 'bpms-operation', 'bpms-runtime', 'fdn-message', 'console-web', 'runtime-web',
               'runtime-mobile', 'operation-web']
 for i in param_list:
