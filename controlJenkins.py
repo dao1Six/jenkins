@@ -39,8 +39,8 @@ if __name__ == '__main__':
                "七巧-后端/bpms-appstore"]
     qajenkins = {'url':'http://jenkins.qa.do1.work','username':'qiqiao','password':'1llR0lbA'}
     uatjenkins = {'url':'http://jenkins.uat.do1.work','username':'do1','password':'7HWoxn8Q'}
-    param_dict = {'Branch':'origin/fixbug-1.3.2','PublishVersion':'true'}
-    execute_environment = uatjenkins
+    param_dict = {'Branch':'origin/release-1.3.3','PublishVersion':'false'}
+    execute_environment = qajenkins
     a = ContrlJenlins(url=execute_environment['url'],username=execute_environment['username'],password=execute_environment['password'])
     a.build_jenkinsJob(jobList,param_dict =param_dict)
 
