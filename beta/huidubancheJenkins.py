@@ -1,8 +1,10 @@
 #生产环境jenkins 信息
-from controlJenkins import ContrlJenlins
+from datetime import time
+from time import strftime, localtime
+
 from excelcontrol import ExcelControl
 import jenkins
-#调个excel控制器
+# 调个excel控制器
 ec = ExcelControl()
 # excel信息
 filepath = "../huidubanche.xlsx"
@@ -30,7 +32,8 @@ for key,value in dictMerged.items():
         param_dict = dict()
         param_dict['name'] = 'DeployVersion'
         param_dict['value'] = value
+        print ("已构建服务: " + key +"版本号为: "+ value+"  构建时间: "+strftime("%Y-%m-%d %H:%M:%S",localtime()))
         server.build_job(key,parameters=param_dict)
-        print("已构建"+key)
+
 
 

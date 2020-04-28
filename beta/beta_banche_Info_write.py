@@ -7,7 +7,7 @@ from excelcontrol import ExcelControl
 prodjenkins = {'url':'http://jenkins.qiqiao-prod.do1.work','username':'qiqiao','password':'6LypDvN2'}
 param_dict = {}
 
-filepath = "../banche.xlsx"
+filepath = "../huidubanche.xlsx"
 sheet_name = "banche"
 
 
@@ -17,7 +17,7 @@ a = ContrlJenlins(url=prodjenkins['url'],username=prodjenkins['username'],passwo
 e = ExcelControl()
 
 #更新版本库
-param_list = ['official-mobile','official-web','fdn-schema', 'bpms-repository', 'fdn-storage', 'bpms-appstore', 'bpms-workbench', 'fdn-authorize',
+param_list = ['fdn-scheduler','official-mobile','official-web','fdn-schema', 'bpms-repository', 'fdn-storage', 'bpms-appstore', 'bpms-workbench', 'fdn-authorize',
               'bpms-portal', 'bpms-operation', 'bpms-runtime', 'fdn-message', 'console-web', 'runtime-web',
               'runtime-mobile', 'operation-web','fdn-scheduler']
 for i in param_list:
