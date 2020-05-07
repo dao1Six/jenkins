@@ -1,32 +1,37 @@
+#使用说明：
+#1、提供 AppScan xml格式报告至filepath参数
+
 import xml.dom.minidom
 from xml.etree import ElementTree as ET
 from xml.dom.minidom import parse
 #文件
-filepath = "../20200429.xml"
+import xlwt
+
+from excelcontrol import ExcelControl
+filepath = "20200429.xml"
+
 
 per = ET.parse(filepath)
-p = per.findall("./issue-type-group/item/name")
-for i in p:
-    print(i.text)
+#修复建议集合
+map = dict()
+remediations = per.findall("./remediation-group/item")
+for r in remediations:
+    map[r.attrib["id"]] = r[0].text
 
-# DOMTree=parse(filepath)
-# booklist=DOMTree.documentElement
-# books=booklist.getElementsByTagName('issue-type-group')
-# list = books[0].childNodes
-# for i in list:
-#     print(i)
+item = per.findall("./issue-type-group/item")
+
+workbook = xlwt.Workbook(encoding = 'ascii')
+worksheet = workbook.add_sheet('My Worksheet',cell_overwrite_ok=True)
+row = 0
+for i in item:
+    print("bug标题："+i[0].text+"   修复意见："+map[i[4][0].text])
+    #写入excel
+
+    # 参数对应 行, 列, 值
+    worksheet.write(row, 0, label=i[0].text)
+    worksheet.write(row, 1, label=map[i[4][0].text])
+    row = row+1
+# 保存
+workbook.save('AppScanReport.xls')
 
 
-#解析AppScan XML报告文件
-
-#获取xml文档对象（对子节点和节点node都适用）
-
-#获取bug标题
-
-
-
-
-#获取bug内容
-
-
-#写入excel文件

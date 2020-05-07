@@ -2,6 +2,7 @@ import os
 
 import xlrd,xlwt,xlutils
 from xlutils.copy import copy
+import openpyxl
 
 class ExcelControl():
     """"""
@@ -59,6 +60,16 @@ class ExcelControl():
             dic[clokeyValue] = cloValue
         return dic
 
+    def baseWrite(self,sheetName,):
+        workbook = xlwt.Workbook(encoding='utf-8')
+        # 创建一个worksheet
+        worksheet = workbook.add_sheet(sheetName)
+
+        # 写入excel
+        # 参数对应 行, 列, 值
+        worksheet.write(1, 0, label='this is test')
+        # 保存
+        workbook.save('Excel_test.xls')
 
 
 
