@@ -8,7 +8,7 @@ from xml.dom.minidom import parse
 import xlwt
 
 from excelcontrol import ExcelControl
-filepath = "20200429.xml"
+filepath = "20200430.xml"
 
 
 per = ET.parse(filepath)
@@ -28,10 +28,10 @@ for i in item:
     #写入excel
 
     # 参数对应 行, 列, 值
-    worksheet.write(row, 0, label=i[0].text)
-    worksheet.write(row, 1, label=map[i[4][0].text])
+    worksheet.write(row, 0, label="【中交建运行平台安全漏洞】"+i[0].text)
+    worksheet.write(row, 1, label="修复建议：  "+map[i[4][0].text])
     row = row+1
 # 保存
-workbook.save('AppScanReport.xls')
+workbook.save('AppScanReport2.xls')
 
 

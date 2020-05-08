@@ -41,7 +41,7 @@ if __name__ == '__main__':
     jobList = qianduan_jobList+houduan_jobList
     qajenkins = {'url':'http://jenkins.qa.do1.work','username':'qiqiao','password':'1llR0lbA'}
     uatjenkins = {'url':'http://jenkins.uat.do1.work','username':'do1','password':'7HWoxn8Q'}
-    param_dict = {'Branch':'origin/fixbug-1.4.0','PublishVersion':'true'}
+    param_dict = {'Branch':'origin/fixbug-1.4.1','PublishVersion':'true'}
     execute_environment = uatjenkins
     a = ContrlJenlins(url=execute_environment['url'],username=execute_environment['username'],password=execute_environment['password'])
     a.build_jenkinsJob(jobList,param_dict =param_dict)
