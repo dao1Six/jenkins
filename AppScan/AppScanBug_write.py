@@ -8,10 +8,11 @@ from xml.dom.minidom import parse
 import xlwt
 
 from excelcontrol import ExcelControl
-filepath = "20200430.xml"
+filepath = "0514run 安全报告.xml"
 
 
 per = ET.parse(filepath)
+
 #修复建议集合
 map = dict()
 remediations = per.findall("./remediation-group/item")
@@ -28,10 +29,10 @@ for i in item:
     #写入excel
 
     # 参数对应 行, 列, 值
-    worksheet.write(row, 0, label="【中交建运行平台安全漏洞】"+i[0].text)
+    worksheet.write(row, 0, label="【中交建开发平台安全漏洞】"+i[0].text)
     worksheet.write(row, 1, label="修复建议：  "+map[i[4][0].text])
     row = row+1
 # 保存
-workbook.save('AppScanReport2.xls')
+workbook.save('AppScanReport4.xls')
 
 

@@ -8,7 +8,7 @@ prodjenkins = {'url':'http://jenkins.qiqiao-prod.do1.work','username':'qiqiao','
 
 
 
-runjenkins = uatjenkins
+runjenkins = qajenkins
 
 server = jenkins.Jenkins(url=runjenkins['url'], username=runjenkins['username'],password=runjenkins['password'])
 
