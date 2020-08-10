@@ -1,4 +1,4 @@
-# 获取最新包的版本填写到班车表
+# 获取灰度最新待发布包的版本填写到班车表
 import time
 
 from controlJenkins import ContrlJenlins

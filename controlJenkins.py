@@ -32,7 +32,7 @@ class ContrlJenlins:
 #"七巧-前端/official-web","七巧-前端/official-mobile",
 
 if __name__ == '__main__':
-    qianduan_jobList = ["七巧-前端/开发平台-在线编辑器IDE","七巧-前端/console","七巧-前端/m-runtime","七巧-前端/runtime","七巧-前端/operation","七巧-前端/help"]
+    qianduan_jobList = []
     houduan_jobList = ["七巧-后端/bpms-workbench",
                "七巧-后端/日志服务","七巧-后端/集成中心","七巧-后端/bpms-repository",
                "七巧-后端/fdn-message","七巧-后端/fdn-authorize","七巧-后端/fdn-storage","七巧-后端/fdn-schema",
@@ -41,8 +41,8 @@ if __name__ == '__main__':
     jobList = qianduan_jobList+houduan_jobList
     qajenkins = {'url':'http://jenkins.qa.do1.work','username':'qiqiao','password':'1llR0lbA'}
     uatjenkins = {'url':'http://jenkins.uat.do1.work','username':'do1','password':'7HWoxn8Q'}
-    param_dict = {'Branch':'origin/release-1.4.3','PublishVersion':'true'}
-    execute_environment = qajenkins
+    param_dict = {'Branch':'origin/release-1.4.5','PublishVersion':'true'}
+    execute_environment = uatjenkins
     a = ContrlJenlins(url=execute_environment['url'],username=execute_environment['username'],password=execute_environment['password'])
     a.build_jenkinsJob(jobList,param_dict =param_dict)
 

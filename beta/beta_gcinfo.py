@@ -1,4 +1,5 @@
-# 获取最新包的版本填写到班车表
+
+# 获取灰度已发布最新包的版本填写到班车表
 import time
 
 import jenkins

@@ -1,3 +1,4 @@
+#灰度构建
 #生产环境jenkins 信息
 from datetime import time
 from time import strftime, localtime
