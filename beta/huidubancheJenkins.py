@@ -33,7 +33,7 @@ for key,value in dictMerged.items():
         param_dict = dict()
         param_dict['name'] = 'DeployVersion'
         param_dict['value'] = value
-        print ("已构建服务: " + key +"版本号为: "+ value+"  构建时间: "+strftime("%Y-%m-%d %H:%M:%S",localtime()))
+        print ("灰度已构建服务: " + key +"版本号为: "+ value+"  构建时间: "+strftime("%Y-%m-%d %H:%M:%S",localtime()))
         server.build_job(key,parameters=param_dict)
 
 
